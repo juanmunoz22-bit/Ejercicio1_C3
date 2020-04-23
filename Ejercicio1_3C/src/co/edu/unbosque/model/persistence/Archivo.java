@@ -10,16 +10,15 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 
-
 import co.edu.unbosque.model.Vehiculo;
 
 public class Archivo {
-
+	
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
-	private File archivo = new File("./data/basedatos.dat");
+	
 
-	public Archivo() {
+	public Archivo(File archivo) {
 		if (archivo.exists()) {
 			System.out.println("El archivo ya existe");
 		} else {
@@ -32,10 +31,11 @@ public class Archivo {
 		}
 
 	}
+	
 
-	public void escribirEnArchivo(ArrayList<Vehiculo> vehiculos, File file) {
-
+	public void escribirEnArchivo(ArrayList<Vehiculo> vehiculos, File archivo) {
 		try {
+			System.out.println(archivo);
 			salida = new ObjectOutputStream(new FileOutputStream(archivo));
 			salida.writeObject(vehiculos);
 			salida.close();
@@ -49,7 +49,8 @@ public class Archivo {
 
 	}
 
-	public ArrayList<Vehiculo> leerArchivo() {
+	public ArrayList<Vehiculo> leerArchivo(File archivo) {
+		
 		ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 		if (archivo.length() != 0) {
 			try {
@@ -69,6 +70,8 @@ public class Archivo {
 		return vehiculos;
 	}
 
+	
+
 	public ObjectInputStream getEntrada() {
 		return entrada;
 	}
@@ -83,14 +86,6 @@ public class Archivo {
 
 	public void setSalida(ObjectOutputStream salida) {
 		this.salida = salida;
-	}
-
-	public File getArchivo() {
-		return archivo;
-	}
-
-	public void setArchivo(File archivo) {
-		this.archivo = archivo;
 	}
 
 }
