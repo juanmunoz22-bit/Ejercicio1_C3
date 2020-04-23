@@ -17,28 +17,24 @@ public class Controller implements ActionListener {
 	private Archivo archivo;
 	private VehiculoDAO vehiculo;
 	private File file = new File("data/basedatos.dat");
-	
+
 	public Controller() {
-		
+
 		vp = new VentanaPrincipal();
 		actionListener(this);
 		vehiculos = new ArrayList<Vehiculo>();
 		archivo = new Archivo(file);
 		vehiculo = new VehiculoDAO(archivo);
 		vehiculos = archivo.leerArchivo(file);
-		
+
 	}
-	
+
 	public void actionListener(ActionListener listener) {
-		
-		
-		
+
 	}
-	
+
 	public void actionPerformed(ActionEvent event) {
-		
-		
-		
+
 	}
 
 }
