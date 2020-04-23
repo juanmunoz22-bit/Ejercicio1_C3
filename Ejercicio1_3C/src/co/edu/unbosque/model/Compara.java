@@ -1,5 +1,7 @@
 package co.edu.unbosque.model;
 
-public class Clase {
-
+public interface Compara {
+	
+	
+	
 }

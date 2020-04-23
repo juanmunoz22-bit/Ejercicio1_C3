@@ -9,18 +9,16 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
 
 
-/*
+import co.edu.unbosque.model.Vehiculo;
+
 public class Archivo {
 
 	private ObjectInputStream entrada;
 	private ObjectOutputStream salida;
-
 	private File archivo = new File("./data/basedatos.dat");
 
-	
 	public Archivo() {
 		if (archivo.exists()) {
 			System.out.println("El archivo ya existe");
@@ -35,12 +33,11 @@ public class Archivo {
 
 	}
 
-	
+	public void escribirEnArchivo(ArrayList<Vehiculo> vehiculos, File file) {
 
-	public void escribirEnArchivo(ArrayList<> arraypersonas) {
 		try {
 			salida = new ObjectOutputStream(new FileOutputStream(archivo));
-			salida.writeObject(arraypersonas);
+			salida.writeObject(vehiculos);
 			salida.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -52,28 +49,12 @@ public class Archivo {
 
 	}
 
-	public void escribirPuesto(ArrayList<Persona> arraypersonas, int i, String puesto) {
-		try {
-			
-			salida = new ObjectOutputStream(new FileOutputStream(archivo));
-			arraypersonas.get(i).setPuesto(puesto);
-			salida.writeChars(arraypersonas.get(i).getPuesto());
-			salida.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-	public ArrayList<Persona> leerArchivo() {
-		ArrayList<Persona> personas = new ArrayList<Persona>();
+	public ArrayList<Vehiculo> leerArchivo() {
+		ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 		if (archivo.length() != 0) {
 			try {
 				entrada = new ObjectInputStream(new FileInputStream(archivo));
-				personas = (ArrayList<Persona>) entrada.readObject();
+				vehiculos = (ArrayList<Vehiculo>) entrada.readObject();
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -85,7 +66,7 @@ public class Archivo {
 				e.printStackTrace();
 			}
 		}
-		return personas;
+		return vehiculos;
 	}
 
 	public ObjectInputStream getEntrada() {
@@ -111,5 +92,5 @@ public class Archivo {
 	public void setArchivo(File archivo) {
 		this.archivo = archivo;
 	}
+
 }
-*/
