@@ -23,7 +23,10 @@ public class PanelUno extends JPanel {
 
 	public PanelUno() {
 
+
 		TitledBorder border = new TitledBorder("Botones");
+
+		
 		border.setTitleFont(new Font("arial", Font.BOLD, 16));
 		setLayout(null);
 		setBackground(Color.white);
@@ -47,8 +50,17 @@ public class PanelUno extends JPanel {
 		buscarBtn.setName("Buscar");
 		eliminarBtn.setName("Eliminar");
 
+
 		// Configuramos la vista
 
+
+		
+		//configuramos el texto de los botones
+		agregarBtn.setFont(new Font("arial", Font.BOLD, 18));
+		buscarBtn.setFont(new Font("arial", Font.BOLD, 18));
+		eliminarBtn.setFont(new Font("arial", Font.BOLD, 18));
+		//Configuramos la vista
+	
 		agregarBtn.setBounds(50, 40, 100, 20);
 		buscarBtn.setBounds(220, 40, 100, 20);
 		eliminarBtn.setBounds(50, 70, 100, 20);
