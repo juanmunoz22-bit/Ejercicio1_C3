@@ -54,7 +54,7 @@ public class Controller implements ActionListener {
 			vp.getPi().getBuscarBtn().setVisible(false);
 
 		}
-
+		
 		// Oprimir boton buscar
 		if (vp.getPi().getBuscarBtn() == event.getSource()) {
 
