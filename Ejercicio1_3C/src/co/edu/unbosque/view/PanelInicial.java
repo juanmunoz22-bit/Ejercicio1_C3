@@ -1,38 +1,40 @@
 package co.edu.unbosque.view;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import java.awt.Color;
+import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
 
-public class VentanaPrincipal extends JFrame {
-
-	private static final long serialVersionUID = 6117540591733912503L;
+public class PanelInicial extends JPanel {
 	
-	private PanelInicial pi = new PanelInicial();
-
+	
+	private static final long serialVersionUID = -8961290724383069814L;
+	
 	private JLabel titulo;
 	private JLabel aLbl, bLbl, cLbl;
 	private JTextField aTxt, bTxt, cTxt;
 	private JButton agregarBtn, buscarBtn, eliminarBtn;
 
-	public VentanaPrincipal() {
-
-		setTitle("Ventana Principal");
-		setSize(480, 400);
-		setLocationRelativeTo(null);
-		setLayout(null);
-		setResizable(true);
-		add(pi);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setVisible(true);
-
-	}
-
 	
 
-	public void inicializarVista() {
+	public PanelInicial() {
+		setLayout(null);
+		setBackground(Color.white);
+		setVisible(true);
+		setBounds(30, 70, 400, 200);
+		
+		TitledBorder border = new TitledBorder("");
+		border.setTitleFont(new Font("arial", Font.BOLD, 16));
+		
+		setBorder(border);
+		activarPanel();
+	}
+	
+	public void activarPanel() {
 
 		titulo = new JLabel("BIENVENIDO");
 		aLbl = new JLabel("aLbl");
@@ -75,15 +77,6 @@ public class VentanaPrincipal extends JFrame {
 		this.add(agregarBtn);
 		this.add(buscarBtn);
 		this.add(eliminarBtn);
-
-	}
-
-	public void mostrarMensaje(String mensaje, String titulo) {
-		if (titulo.equals("ERROR")) {
-			JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.ERROR_MESSAGE);
-		} else {
-			JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
-		}
 
 	}
 
