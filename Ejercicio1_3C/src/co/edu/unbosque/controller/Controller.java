@@ -30,10 +30,22 @@ public class Controller implements ActionListener {
 	}
 
 	public void actionListener(ActionListener listener) {
+		
+		vp.getPi().getAgregarBtn().addActionListener(listener);
 
 	}
 
 	public void actionPerformed(ActionEvent event) {
+		
+		//Oprimir boton agregar
+		if(vp.getPi().getAgregarBtn()==event.getSource()) {
+			
+			vp.getPi().getAgregarBtn().setVisible(false);
+			vp.getPi().getEliminarBtn().setVisible(false);
+			vp.getPi().getBuscarBtn().setVisible(false);
+			
+		}
+		
 
 	}
 
