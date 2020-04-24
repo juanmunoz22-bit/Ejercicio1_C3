@@ -25,7 +25,7 @@ public class PanelInicial extends JPanel {
 		setLayout(null);
 		setBackground(Color.white);
 		setVisible(true);
-		setBounds(30, 70, 400, 200);
+		setBounds(0, 0, 600, 600);
 		
 		TitledBorder border = new TitledBorder("");
 		border.setTitleFont(new Font("arial", Font.BOLD, 16));
@@ -60,12 +60,13 @@ public class PanelInicial extends JPanel {
 
 		titulo.setBounds(50, 10, 100, 20);
 		aLbl.setBounds(50, 40, 100, 20);
-		bLbl.setBounds(220, 40, 100, 20);
-		cLbl.setBounds(50, 70, 100, 20);
-		aTxt.setBounds(220, 70, 100, 20);
-		bTxt.setBounds(220, 100, 100, 20);
+		bLbl.setBounds(50, 70, 100, 20);
+		cLbl.setBounds(50, 100, 100, 20);
+		aTxt.setBounds(220, 40, 100, 20);
+		bTxt.setBounds(220, 70, 100, 20);
 		cTxt.setBounds(220, 100, 100, 20);
-
+		agregarBtn.setBounds(50, 130, 100, 20);
+		
 
 		this.add(titulo);
 		this.add(aLbl);

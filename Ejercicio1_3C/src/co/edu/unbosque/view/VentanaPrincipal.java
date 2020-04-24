@@ -30,54 +30,6 @@ public class VentanaPrincipal extends JFrame {
 
 	}
 
-	
-
-	public void inicializarVista() {
-
-		titulo = new JLabel("BIENVENIDO");
-		aLbl = new JLabel("aLbl");
-		bLbl = new JLabel("bLbl");
-		cLbl = new JLabel("cLbl");
-		aTxt = new JTextField("aTxt");
-		bTxt = new JTextField("b");
-		cTxt = new JTextField("cTxt");
-		agregarBtn = new JButton("Agregar");
-		buscarBtn = new JButton("Buscar");
-		eliminarBtn = new JButton("Eliminar");
-
-		aLbl.setName("aLbl");
-		bLbl.setName("bLbl");
-		cLbl.setName("cLbl");
-		aTxt.setName("aTxt");
-		bTxt.setName("bTxt");
-		cTxt.setName("cTxt");
-		agregarBtn.setName("Agregar");
-		buscarBtn.setName("Buscar");
-		eliminarBtn.setName("Eliminar");
-		
-
-		titulo.setBounds(50, 10, 100, 20);
-		aLbl.setBounds(50, 40, 100, 20);
-		bLbl.setBounds(220, 40, 100, 20);
-		cLbl.setBounds(50, 70, 100, 20);
-		aTxt.setBounds(220, 70, 100, 20);
-		bTxt.setBounds(220, 100, 100, 20);
-		cTxt.setBounds(220, 100, 100, 20);
-
-
-		this.add(titulo);
-		this.add(aLbl);
-		this.add(bLbl);
-		this.add(cLbl);
-		this.add(aTxt);
-		this.add(bTxt);
-		this.add(cTxt);
-		this.add(agregarBtn);
-		this.add(buscarBtn);
-		this.add(eliminarBtn);
-
-	}
-
 	public void mostrarMensaje(String mensaje, String titulo) {
 		if (titulo.equals("ERROR")) {
 			JOptionPane.showMessageDialog(null, mensaje, titulo, JOptionPane.ERROR_MESSAGE);
