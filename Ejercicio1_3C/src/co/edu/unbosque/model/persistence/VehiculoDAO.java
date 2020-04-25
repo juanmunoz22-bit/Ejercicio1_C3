@@ -4,9 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import co.edu.unbosque.model.Compara;
 import co.edu.unbosque.model.Vehiculo;
 
-public class VehiculoDAO {
+public class VehiculoDAO implements Compara {
 
 	private Archivo archivo;
 
@@ -76,6 +77,40 @@ public class VehiculoDAO {
 
 	private void verificarInvariante() {
 		assert archivo != null : "El archivo con el que se va a trabajar no puede ser null";
+	}
+
+	@Override
+	public void comparar(int num) {
+
+		switch (num) {
+		case 1:
+
+			break;
+
+		case 2:
+
+			break;
+
+		case 3:
+
+			break;
+
+		case 4:
+
+			break;
+
+		case 5:
+
+			break;
+
+		case 6:
+
+			break;
+
+		default:
+			break;
+		}
+
 	}
 
 }

@@ -43,6 +43,10 @@ public class Controller implements ActionListener {
 		//vp.getPi().getElDosBtn().addActionListener(listener);
 		//vp.getPi().getRegDosBtn().addActionListener(listener);
 		
+
+		//vp.getPo().getCompararBtn().addActionListener(listener);
+
+
 	}
 
 	public void actionPerformed(ActionEvent event) {
@@ -86,6 +90,11 @@ public class Controller implements ActionListener {
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 
+		}
+		
+		// Oprimir boton comparar
+		if(vp.getPo().getCompararBtn() == event.getSource()) {
+			vp.getPo().desactivarPanel();
 		}
 
 	}
