@@ -2,7 +2,6 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -24,7 +23,7 @@ import javax.swing.border.TitledBorder;
 	
 		public PanelDos() {
 		
-		TitledBorder border = new TitledBorder("COMPARAR");
+		TitledBorder border = new TitledBorder("ACCIONES");
 		border.setTitleFont(new Font("arial", Font.BOLD, 16));
 		setLayout(null);
 		setBackground(Color.white);
@@ -86,12 +85,6 @@ import javax.swing.border.TitledBorder;
 		
 		}
 		
-		public JButton getVenderBtn() {
-			return venderBtn;
-		}
-		public void setVenderBtn(JButton venderBtn) {
-			this.venderBtn = venderBtn;
-		}
 		public void activarComparar() {
 			
 			comp1Lbl = new JLabel("Placa 1");
@@ -109,6 +102,10 @@ import javax.swing.border.TitledBorder;
 			comp2Txt = new JTextField();
 			comp2Txt.setBounds(250, 70, 150, 20);
 			this.add(comp2Txt);
+			
+			compararBtn = new JButton("Comparar");
+			compararBtn.setBounds(0, 0, 100, 100);
+			this.add(compararBtn);
 			
 		}
 		
@@ -204,6 +201,11 @@ import javax.swing.border.TitledBorder;
 		public void setComp2Txt(JTextField comp2Txt) {
 			this.comp2Txt = comp2Txt;
 		}
-		
+		public JButton getVenderBtn() {
+			return venderBtn;
+		}
+		public void setVenderBtn(JButton venderBtn) {
+			this.venderBtn = venderBtn;
+		}
 	}
 

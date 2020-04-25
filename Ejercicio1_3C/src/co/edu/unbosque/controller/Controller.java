@@ -26,6 +26,7 @@ public class Controller implements ActionListener {
 		archivo = new Archivo(file);
 		vehiculo = new VehiculoDAO(archivo);
 		vehiculos = archivo.leerArchivo(file);
+		
 
 	}
 
@@ -38,14 +39,9 @@ public class Controller implements ActionListener {
 		vp.getPo().getCompararBtn().addActionListener(listener);
 		vp.getPo().getTipoRad().addActionListener(listener);
 		vp.getPo().getMarcaRad().addActionListener(listener);
-
-		// Botones del panelUno AGREGAR(Agregar y regresar)
-
-		// Botones del PanelUno ELIMINAR(Eliminar y regresar)
-		// vp.getPi().getElDosBtn().addActionListener(listener);
-		// vp.getPi().getRegDosBtn().addActionListener(listener);
-
-		// vp.getPo().getCompararBtn().addActionListener(listener);
+		vp.getPo().getCompararBtn().addActionListener(listener);
+		vp.getRegresarBtn().addActionListener(listener);
+		
 
 	}
 
@@ -57,7 +53,7 @@ public class Controller implements ActionListener {
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
-			vp.getPi().activarPanelAgregar();
+			vp.getPi().activarAgregar();
 
 		}
 
@@ -68,7 +64,6 @@ public class Controller implements ActionListener {
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
-			vp.getPi().activarPanelEliminar();
 
 			// oprimir el boton regresar en el panel eliminar
 		}
@@ -82,13 +77,14 @@ public class Controller implements ActionListener {
 		// }
 
 		// Oprimir boton buscar
-		if (vp.getPi().getBuscarBtn() == event.getSource()) {
+		/*if (vp.getPi().getBuscarBtn() == event.getSource()) {
 
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
+			vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
 
-		}
+		}*/
 
 		if (vp.getPo().getMarcaRad() == event.getSource()) {
 			int num=1;
@@ -96,6 +92,12 @@ public class Controller implements ActionListener {
 			vp.getPo().activarComparar();
 			
 		}
+		
+		if (vp.getPo().getCompararBtn()== event.getSource()) {
+			System.out.println("Hola");
+		}
+		
+		
 		
 		
 
