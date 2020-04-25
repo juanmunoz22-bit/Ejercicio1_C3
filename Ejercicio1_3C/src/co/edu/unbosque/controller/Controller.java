@@ -41,7 +41,7 @@ public class Controller implements ActionListener {
 		
 		//Botones del PanelUno ELIMINAR(Eliminar y regresar)
 		//vp.getPi().getElDosBtn().addActionListener(listener);
-		vp.getPi().getRegDosBtn().addActionListener(listener);
+		//vp.getPi().getRegDosBtn().addActionListener(listener);
 		
 	}
 
@@ -70,14 +70,14 @@ public class Controller implements ActionListener {
 		//oprimir el boton regresar en el panel eliminar	
 		}
 		
-		if (vp.getPi().getRegDosBtn() == event.getSource()) {
+	//	if (vp.getPi().getRegDosBtn() == event.getSource()) {
 			
-			vp.getPi().getPlacaLbl().setVisible(false);
-			vp.getPi().getPlacaTxt().setVisible(false);
-			vp.getPi().activarPanel();
+		//	vp.getPi().getPlacaLbl().setVisible(false);
+			//vp.getPi().getPlacaTxt().setVisible(false);
+			//vp.getPi().activarPanel();
 			
 		
-		}
+		//}
 		
 		// Oprimir boton buscar
 		if (vp.getPi().getBuscarBtn() == event.getSource()) {

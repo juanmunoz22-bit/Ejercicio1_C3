@@ -54,7 +54,7 @@ import javax.swing.border.TitledBorder;
 		puertaRad.setBounds(10, 170, 200, 30);
 		tipoRad.setBounds(10, 200, 200, 30);
 		compararBtn.setBounds(230, 50, 210, 180);
-		setBackground(Color.white);
+		
 		
 		//configuramos el texto del botón
 		compararBtn.setFont(new Font("arial", Font.BOLD, 18));
