@@ -31,28 +31,52 @@ public class Controller implements ActionListener {
 
 	public void actionListener(ActionListener listener) {
 
+		//Botones de la ventana principal panel Uno
 		vp.getPi().getAgregarBtn().addActionListener(listener);
-
+		vp.getPi().getEliminarBtn().addActionListener(listener);
+		vp.getPi().getBuscarBtn().addActionListener(listener);
+		
+		//Botones del panelUno AGREGAR(Agregar y regresar)
+		
+		
+		//Botones del PanelUno ELIMINAR(Eliminar y regresar)
+		//vp.getPi().getElDosBtn().addActionListener(listener);
+		vp.getPi().getRegDosBtn().addActionListener(listener);
+		
 	}
 
 	public void actionPerformed(ActionEvent event) {
 
-		// Oprimir boton agregar
+		// Oprimir boton agregar de la ventana principal
 		if (vp.getPi().getAgregarBtn() == event.getSource()) {
 
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
-
+			vp.getPi().activarPanelAgregar();
+		
 		}
+		
 
 		// Oprimir boton eliminar
+		
 		if (vp.getPi().getEliminarBtn() == event.getSource()) {
 
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
-
+			vp.getPi().activarPanelEliminar();
+			
+		//oprimir el boton regresar en el panel eliminar	
+		}
+		
+		if (vp.getPi().getRegDosBtn() == event.getSource()) {
+			
+			vp.getPi().getPlacaLbl().setVisible(false);
+			vp.getPi().getPlacaTxt().setVisible(false);
+			vp.getPi().activarPanel();
+			
+		
 		}
 		
 		// Oprimir boton buscar
