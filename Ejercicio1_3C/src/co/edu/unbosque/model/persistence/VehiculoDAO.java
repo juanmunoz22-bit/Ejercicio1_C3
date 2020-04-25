@@ -80,7 +80,7 @@ public class VehiculoDAO implements Compara {
 	}
 
 	@Override
-	public void comparar(int num) {
+	public void comparar(int num, String v1, String v2) {
 
 		switch (num) {
 		case 1:

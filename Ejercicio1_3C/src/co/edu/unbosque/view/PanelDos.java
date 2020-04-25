@@ -20,7 +20,7 @@ import javax.swing.border.TitledBorder;
 	private JRadioButton modeloRad,marcaRad,placaRad,capacRad,puertaRad,tipoRad;
 	private JTextField comp1Txt, comp2Txt;
 	private ButtonGroup buttonG;
-	private JButton compararBtn;
+	private JButton compararBtn, venderBtn;
 	
 		public PanelDos() {
 		
@@ -45,23 +45,27 @@ import javax.swing.border.TitledBorder;
 		tipoRad = new JRadioButton("Tipo");	
 		buttonG = new ButtonGroup();
 		compararBtn = new JButton("Comparar");
+		venderBtn = new JButton("Vender");
+		
 		
 		//ponemos nombre al Jlabel
 		mensajeLbl.setName("mensaje");	
 		
 		//Configuramos la vista
 		mensajeLbl.setBounds(10, 20, 290, 20);
-		modeloRad.setBounds(10, 50, 200, 30);
-		marcaRad.setBounds(10, 80, 200, 30);
-		placaRad.setBounds(10, 110, 200, 30);
-		capacRad.setBounds(10, 140, 200, 30);
-		puertaRad.setBounds(10, 170, 200, 30);
-		tipoRad.setBounds(10, 200, 200, 30);
+		modeloRad.setBounds(250, 50, 200, 30);
+		marcaRad.setBounds(250, 80, 200, 30);
+		placaRad.setBounds(250, 110, 200, 30);
+		capacRad.setBounds(250, 140, 200, 30);
+		puertaRad.setBounds(250, 170, 200, 30);
+		tipoRad.setBounds(250, 200, 200, 30);
 		compararBtn.setBounds(230, 50, 210, 180);
+		venderBtn.setBounds(10, 50, 210, 180);
 		
 		
 		//configuramos el texto del botón
 		compararBtn.setFont(new Font("arial", Font.BOLD, 18));
+		venderBtn.setFont(new Font("arial", Font.BOLD, 18));
 		
 		//Agregamos los botones al panel
 		this.add(mensajeLbl);
@@ -77,15 +81,34 @@ import javax.swing.border.TitledBorder;
 		buttonG.add(puertaRad);
 		this.add(tipoRad);
 		buttonG.add(tipoRad);
-		this.add(compararBtn);
+		//this.add(compararBtn);
+		this.add(venderBtn);
 		
 		}
 		
-		public void activarComparar(String texto1, String texto2) {
+		public JButton getVenderBtn() {
+			return venderBtn;
+		}
+		public void setVenderBtn(JButton venderBtn) {
+			this.venderBtn = venderBtn;
+		}
+		public void activarComparar() {
 			
-			comp1Lbl = new JLabel(texto1);
-			comp1Lbl.setBounds(10, 20, 290, 20);
-			add(comp1Lbl);
+			comp1Lbl = new JLabel("Placa 1");
+			comp1Lbl.setBounds(100, 45, 150, 20);
+			this.add(comp1Lbl);
+			
+			comp1Txt = new JTextField();
+			comp1Txt.setBounds(50, 70, 150, 20);
+			this.add(comp1Txt);
+			
+			comp2Lbl = new JLabel("Placa 2");
+			comp2Lbl.setBounds(300, 45, 150, 20);
+			this.add(comp2Lbl);
+			
+			comp2Txt = new JTextField();
+			comp2Txt.setBounds(250, 70, 150, 20);
+			this.add(comp2Txt);
 			
 		}
 		
@@ -99,6 +122,7 @@ import javax.swing.border.TitledBorder;
 			tipoRad.setVisible(false);
 			compararBtn.setVisible(false);
 			mensajeLbl.setVisible(false);
+			venderBtn.setVisible(false);
 			
 		}
 		
@@ -168,5 +192,18 @@ import javax.swing.border.TitledBorder;
 		public void setComp2Lbl(JLabel comp2Lbl) {
 			this.comp2Lbl = comp2Lbl;
 		}
+		public JTextField getComp1Txt() {
+			return comp1Txt;
+		}
+		public void setComp1Txt(JTextField comp1Txt) {
+			this.comp1Txt = comp1Txt;
+		}
+		public JTextField getComp2Txt() {
+			return comp2Txt;
+		}
+		public void setComp2Txt(JTextField comp2Txt) {
+			this.comp2Txt = comp2Txt;
+		}
+		
 	}
 

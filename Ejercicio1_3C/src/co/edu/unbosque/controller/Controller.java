@@ -31,21 +31,21 @@ public class Controller implements ActionListener {
 
 	public void actionListener(ActionListener listener) {
 
-		//Botones de la ventana principal panel Uno
+		// Botones de la ventana principal panel Uno
 		vp.getPi().getAgregarBtn().addActionListener(listener);
 		vp.getPi().getEliminarBtn().addActionListener(listener);
 		vp.getPi().getBuscarBtn().addActionListener(listener);
-		
-		//Botones del panelUno AGREGAR(Agregar y regresar)
-		
-		
-		//Botones del PanelUno ELIMINAR(Eliminar y regresar)
-		//vp.getPi().getElDosBtn().addActionListener(listener);
-		//vp.getPi().getRegDosBtn().addActionListener(listener);
-		
+		vp.getPo().getCompararBtn().addActionListener(listener);
+		vp.getPo().getTipoRad().addActionListener(listener);
+		vp.getPo().getMarcaRad().addActionListener(listener);
 
-		//vp.getPo().getCompararBtn().addActionListener(listener);
+		// Botones del panelUno AGREGAR(Agregar y regresar)
 
+		// Botones del PanelUno ELIMINAR(Eliminar y regresar)
+		// vp.getPi().getElDosBtn().addActionListener(listener);
+		// vp.getPi().getRegDosBtn().addActionListener(listener);
+
+		// vp.getPo().getCompararBtn().addActionListener(listener);
 
 	}
 
@@ -58,31 +58,29 @@ public class Controller implements ActionListener {
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 			vp.getPi().activarPanelAgregar();
-		
+
 		}
-		
 
 		// Oprimir boton eliminar
-		
+
 		if (vp.getPi().getEliminarBtn() == event.getSource()) {
 
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 			vp.getPi().activarPanelEliminar();
-			
-		//oprimir el boton regresar en el panel eliminar	
+
+			// oprimir el boton regresar en el panel eliminar
 		}
-		
-	//	if (vp.getPi().getRegDosBtn() == event.getSource()) {
-			
-		//	vp.getPi().getPlacaLbl().setVisible(false);
-			//vp.getPi().getPlacaTxt().setVisible(false);
-			//vp.getPi().activarPanel();
-			
-		
-		//}
-		
+
+		// if (vp.getPi().getRegDosBtn() == event.getSource()) {
+
+		// vp.getPi().getPlacaLbl().setVisible(false);
+		// vp.getPi().getPlacaTxt().setVisible(false);
+		// vp.getPi().activarPanel();
+
+		// }
+
 		// Oprimir boton buscar
 		if (vp.getPi().getBuscarBtn() == event.getSource()) {
 
@@ -91,11 +89,15 @@ public class Controller implements ActionListener {
 			vp.getPi().getBuscarBtn().setVisible(false);
 
 		}
-		
-		// Oprimir boton comparar
-		if(vp.getPo().getCompararBtn() == event.getSource()) {
+
+		if (vp.getPo().getMarcaRad() == event.getSource()) {
+			int num=1;
 			vp.getPo().desactivarPanel();
+			vp.getPo().activarComparar();
+			
 		}
+		
+		
 
 	}
 
