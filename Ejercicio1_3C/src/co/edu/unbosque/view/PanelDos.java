@@ -9,12 +9,16 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 	public class PanelDos extends JPanel {
 
-	private JLabel mensajeLbl;
+	private static final long serialVersionUID = 791345044256043003L;
+	
+	private JLabel mensajeLbl, comp1Lbl, comp2Lbl;
 	private JRadioButton modeloRad,marcaRad,placaRad,capacRad,puertaRad,tipoRad;
+	private JTextField comp1Txt, comp2Txt;
 	private ButtonGroup buttonG;
 	private JButton compararBtn;
 	
@@ -74,6 +78,94 @@ import javax.swing.border.TitledBorder;
 		buttonG.add(tipoRad);
 		this.add(compararBtn);
 		
+		}
+		
+		public void activarComparar(String texto1, String texto2) {
+			
+			comp1Lbl = new JLabel(texto1);
+			comp1Lbl.setBounds(10, 20, 290, 20);
+			add(comp1Lbl);
+			
+		}
+		
+		public void desactivarPanel() {
+			mensajeLbl.setVisible(false);
+			capacRad.setVisible(false);
+			marcaRad.setVisible(false);
+			modeloRad.setVisible(false);
+			placaRad.setVisible(false);
+			puertaRad.setVisible(false);
+			tipoRad.setVisible(false);
+			compararBtn.setVisible(false);
+			mensajeLbl.setVisible(false);
+			
+		}
+		
+		public JLabel getMensajeLbl() {
+			return mensajeLbl;
+		}
+		public void setMensajeLbl(JLabel mensajeLbl) {
+			this.mensajeLbl = mensajeLbl;
+		}
+		public JRadioButton getModeloRad() {
+			return modeloRad;
+		}
+		public void setModeloRad(JRadioButton modeloRad) {
+			this.modeloRad = modeloRad;
+		}
+		public JRadioButton getMarcaRad() {
+			return marcaRad;
+		}
+		public void setMarcaRad(JRadioButton marcaRad) {
+			this.marcaRad = marcaRad;
+		}
+		public JRadioButton getPlacaRad() {
+			return placaRad;
+		}
+		public void setPlacaRad(JRadioButton placaRad) {
+			this.placaRad = placaRad;
+		}
+		public JRadioButton getCapacRad() {
+			return capacRad;
+		}
+		public void setCapacRad(JRadioButton capacRad) {
+			this.capacRad = capacRad;
+		}
+		public JRadioButton getPuertaRad() {
+			return puertaRad;
+		}
+		public void setPuertaRad(JRadioButton puertaRad) {
+			this.puertaRad = puertaRad;
+		}
+		public JRadioButton getTipoRad() {
+			return tipoRad;
+		}
+		public void setTipoRad(JRadioButton tipoRad) {
+			this.tipoRad = tipoRad;
+		}
+		public ButtonGroup getButtonG() {
+			return buttonG;
+		}
+		public void setButtonG(ButtonGroup buttonG) {
+			this.buttonG = buttonG;
+		}
+		public JButton getCompararBtn() {
+			return compararBtn;
+		}
+		public void setCompararBtn(JButton compararBtn) {
+			this.compararBtn = compararBtn;
+		}
+		public JLabel getComp1Lbl() {
+			return comp1Lbl;
+		}
+		public void setComp1Lbl(JLabel comp1Lbl) {
+			this.comp1Lbl = comp1Lbl;
+		}
+		public JLabel getComp2Lbl() {
+			return comp2Lbl;
+		}
+		public void setComp2Lbl(JLabel comp2Lbl) {
+			this.comp2Lbl = comp2Lbl;
 		}
 	}
 
