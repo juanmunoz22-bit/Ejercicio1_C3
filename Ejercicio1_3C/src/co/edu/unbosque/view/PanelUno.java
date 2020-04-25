@@ -102,6 +102,7 @@ public class PanelUno extends JPanel {
 		
 		//Configuramos la vista
 		
+		
 		marcaLbl.setBounds(10, 20, 100, 20);
 		modeloLbl.setBounds(10, 50, 100, 20); 
 		placaLbl.setBounds(10, 80, 100, 20);
