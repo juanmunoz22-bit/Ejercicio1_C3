@@ -13,13 +13,15 @@ public class PanelUno extends JPanel {
 
 	private static final long serialVersionUID = -8961290724383069814L;
 
-	private JButton agregarBtn, buscarBtn, eliminarBtn, regUnoBtn,agUnoBtn,regDosBtn,elDosBtn;
+	private JButton agregarBtn, buscarBtn, eliminarBtn, regUnoBtn,agUnoBtn,regDosBtn,elDosBtn, registraBtn;
+	
+
 	private JLabel marcaLbl, modeloLbl, placaLbl, puertasLbl, capacidadLbl, tipoLbl;
 	private JTextField marcaTxt, modeloTxt, placaTxt, puertasTxt, capacidadTxt, tipoTxt; 
 	
 	public PanelUno() {
 
-		TitledBorder border = new TitledBorder("BOTONES");
+		TitledBorder border = new TitledBorder("VEHICULOS");
 
 		border.setTitleFont(new Font("arial", Font.BOLD, 16));
 		setLayout(null);
@@ -81,6 +83,8 @@ public class PanelUno extends JPanel {
 		puertasLbl = new JLabel("Puertas"); 
 		capacidadLbl = new JLabel("Capacidad");
 		tipoLbl = new JLabel("Tipo");
+		registraBtn = new JButton("Registrar");
+	
 		
 		// creamos las cajas de texto
 		marcaTxt = new JTextField("");
@@ -90,15 +94,6 @@ public class PanelUno extends JPanel {
 		capacidadTxt = new JTextField("");
 		tipoTxt  = new JTextField("");
 
-		// Pones Nombre a los Botones
-		agregarBtn.setName("Agregar");
-		buscarBtn.setName("Buscar");
-		eliminarBtn.setName("Eliminar");
-
-		//configuramos el texto de los botones
-		agregarBtn.setFont(new Font("arial", Font.BOLD, 18));
-		buscarBtn.setFont(new Font("arial", Font.BOLD, 18));
-		eliminarBtn.setFont(new Font("arial", Font.BOLD, 18));
 		
 		//Configuramos la vista
 		
@@ -116,7 +111,17 @@ public class PanelUno extends JPanel {
 		puertasTxt.setBounds(130, 110, 100, 20);
 		capacidadTxt.setBounds(130, 140, 100, 20);
 		tipoTxt.setBounds(130, 170, 100, 20); 
-
+		
+		registraBtn.setFont(new Font("arial", Font.BOLD, 16));
+		registraBtn.setBounds(270, 50, 150, 50);
+		this.add(registraBtn);
+		
+		regDosBtn = new JButton("Regresar");
+		regDosBtn.setFont(new Font("arial", Font.BOLD, 16));
+		regDosBtn.setBounds(270, 120, 150, 50);
+		this.add(regDosBtn);
+		
+		
 		// Agregamos los botones al panel
 		this.add(marcaLbl);
 		this.add(modeloLbl);
@@ -319,6 +324,10 @@ public class PanelUno extends JPanel {
 
 		public void setTipoTxt(JTextField tipoTxt) {
 			this.tipoTxt = tipoTxt;
+		}
+		
+		public JButton getRegistraBtn() {
+			return registraBtn;
 		}
 
 		public static long getSerialversionuid() {
