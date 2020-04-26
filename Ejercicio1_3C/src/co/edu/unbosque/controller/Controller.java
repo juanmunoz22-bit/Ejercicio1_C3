@@ -59,8 +59,10 @@ public class Controller implements ActionListener {
 		
 			vp.getPi().getPa().setVisible(false);
 			vp.getPi().setVisible(true);
-			
-			
+			vp.getPi().getAgregarBtn().setVisible(true);
+			vp.getPi().getEliminarBtn().setVisible(true);
+			vp.getPi().getBuscarBtn().setVisible(true);
+				
 		}
 		if (vp.getPi().getPa().getAgregarBtn() == event.getSource()) {
 

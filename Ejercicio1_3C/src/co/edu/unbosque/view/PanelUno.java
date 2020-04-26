@@ -22,7 +22,7 @@ public class PanelUno extends JPanel {
 
 	public PanelUno() {
 
-		TitledBorder border = new TitledBorder("VEHICULOS");
+		TitledBorder border = new TitledBorder("VEHICULOS 1");
 
 		border.setTitleFont(new Font("arial", Font.BOLD, 16));
 		setLayout(null);
