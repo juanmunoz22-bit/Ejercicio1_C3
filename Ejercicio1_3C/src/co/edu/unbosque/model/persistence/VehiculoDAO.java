@@ -10,6 +10,8 @@ import co.edu.unbosque.model.Vehiculo;
 public class VehiculoDAO implements Compara {
 
 	private Archivo archivo;
+	
+	private ArrayList<Vehiculo> vehiculos = new ArrayList<Vehiculo>();
 
 	public VehiculoDAO(Archivo archivo) {
 		this.archivo = archivo;

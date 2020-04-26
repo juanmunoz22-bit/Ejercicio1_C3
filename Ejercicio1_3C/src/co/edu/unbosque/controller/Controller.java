@@ -17,6 +17,7 @@ public class Controller implements ActionListener {
 	private Archivo archivo;
 	private VehiculoDAO vehiculo;
 	private File file = new File("data/basedatos.dat");
+	private int num;
 
 	public Controller() {
 
@@ -41,6 +42,13 @@ public class Controller implements ActionListener {
 		vp.getPi().getPe().getEliminarBtn().addActionListener(listener);
 		vp.getPi().getPb().getRegresarBtn().addActionListener(listener);
 		vp.getPi().getPb().getBuscarBtn().addActionListener(listener);
+		vp.getPo().getModeloRad().addActionListener(listener);
+		vp.getPo().getPuertaRad().addActionListener(listener);
+		vp.getPo().getMarcaRad().addActionListener(listener);
+		vp.getPo().getTipoRad().addActionListener(listener);
+		vp.getPo().getCapacRad().addActionListener(listener);
+		vp.getPo().getPc().getCompararBtn().addActionListener(listener);
+		vp.getPo().getPc().getRegresarBtn().addActionListener(listener);
 
 	}
 
@@ -141,7 +149,7 @@ public class Controller implements ActionListener {
 		}
 
 		if (vp.getPi().getPb().getBuscarBtn() == event.getSource()) {
-			
+
 			if (vehiculos.isEmpty()) {
 				vp.mostrarMensaje("No Hay vehiculos registrados en la base de datos", "INFORMACION");
 			}
@@ -156,7 +164,7 @@ public class Controller implements ActionListener {
 					}
 				}
 				if (vp.getPi().getPb().getInfoLbl().getText().isEmpty()) {
-					vp.mostrarMensaje("La placa digitada no existe o no ha digitado ninguna placa", "ERROR");
+					vp.mostrarMensaje("La placa digitada no existe", "ERROR");
 
 				}
 			}
@@ -172,9 +180,116 @@ public class Controller implements ActionListener {
 
 		}
 
-		// if (vp.getPo().getMarcaRad() == event.getSource()) {
-		// int num = 1;
-		// vp.getPo().desactivarPanel();
+		if (vp.getPo().getModeloRad() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(false);
+			vp.getPo().getCapacRad().setVisible(false);
+			vp.getPo().getMarcaRad().setVisible(false);
+			vp.getPo().getModeloRad().setVisible(false);
+			vp.getPo().getPlacaRad().setVisible(false);
+			vp.getPo().getPuertaRad().setVisible(false);
+			vp.getPo().getTipoRad().setVisible(false);
+			vp.getPo().getMensajeLbl().setVisible(false);
+			vp.getPo().getPc().setVisible(true);
+			num = 2;
+
+		}
+
+		if (vp.getPo().getMarcaRad() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(false);
+			vp.getPo().getCapacRad().setVisible(false);
+			vp.getPo().getMarcaRad().setVisible(false);
+			vp.getPo().getModeloRad().setVisible(false);
+			vp.getPo().getPlacaRad().setVisible(false);
+			vp.getPo().getPuertaRad().setVisible(false);
+			vp.getPo().getTipoRad().setVisible(false);
+			vp.getPo().getMensajeLbl().setVisible(false);
+			vp.getPo().getPc().setVisible(true);
+			num = 1;
+
+		}
+
+		if (vp.getPo().getCapacRad() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(false);
+			vp.getPo().getCapacRad().setVisible(false);
+			vp.getPo().getMarcaRad().setVisible(false);
+			vp.getPo().getModeloRad().setVisible(false);
+			vp.getPo().getPlacaRad().setVisible(false);
+			vp.getPo().getPuertaRad().setVisible(false);
+			vp.getPo().getTipoRad().setVisible(false);
+			vp.getPo().getMensajeLbl().setVisible(false);
+			vp.getPo().getPc().setVisible(true);
+			num = 4;
+
+		}
+
+		if (vp.getPo().getTipoRad() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(false);
+			vp.getPo().getCapacRad().setVisible(false);
+			vp.getPo().getMarcaRad().setVisible(false);
+			vp.getPo().getModeloRad().setVisible(false);
+			vp.getPo().getPlacaRad().setVisible(false);
+			vp.getPo().getPuertaRad().setVisible(false);
+			vp.getPo().getTipoRad().setVisible(false);
+			vp.getPo().getMensajeLbl().setVisible(false);
+			vp.getPo().getPc().setVisible(true);
+			num = 5;
+
+		}
+
+		if (vp.getPo().getPuertaRad() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(false);
+			vp.getPo().getCapacRad().setVisible(false);
+			vp.getPo().getMarcaRad().setVisible(false);
+			vp.getPo().getModeloRad().setVisible(false);
+			vp.getPo().getPlacaRad().setVisible(false);
+			vp.getPo().getPuertaRad().setVisible(false);
+			vp.getPo().getTipoRad().setVisible(false);
+			vp.getPo().getMensajeLbl().setVisible(false);
+			vp.getPo().getPc().setVisible(true);
+			num = 3;
+
+		}
+
+		if (vp.getPo().getPc().getCompararBtn() == event.getSource()) {
+			try {
+
+				String v1 = vp.getPo().getPc().getComp1Txt().getText();
+				String v2 = vp.getPo().getPc().getComp2Txt().getText();
+				if (num == 1) {
+					for (int i = 0; i <= vehiculos.size() - 1; i++) {
+						if (v1.equals(vehiculos.get(i).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl1().setText(vehiculos.get(i).getMarca());
+						}
+					}
+				}
+				vehiculo.comparar(num, v1, v2);
+
+			} catch (NumberFormatException n) {
+				if (vp.getPo().getPc().getComp1Txt().getText().isEmpty()
+						|| vp.getPo().getPc().getComp2Txt().getText().isEmpty()) {
+					vp.mostrarMensaje("Todos los campos son requeridos", "ERROR");
+				}
+			}
+		}
+
+		if (vp.getPo().getPc().getRegresarBtn() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(true);
+			vp.getPo().getCapacRad().setVisible(true);
+			vp.getPo().getMarcaRad().setVisible(true);
+			vp.getPo().getModeloRad().setVisible(true);
+			vp.getPo().getPlacaRad().setVisible(true);
+			vp.getPo().getPuertaRad().setVisible(true);
+			vp.getPo().getTipoRad().setVisible(true);
+			vp.getPo().getMensajeLbl().setVisible(true);
+			vp.getPo().getPc().setVisible(false);
+
+		}
 
 	}
 

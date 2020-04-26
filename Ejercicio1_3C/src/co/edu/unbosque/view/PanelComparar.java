@@ -10,7 +10,7 @@ import javax.swing.JTextField;
 public class PanelComparar extends JPanel {
 
 	private JTextField comp1Txt, comp2Txt;
-	private JLabel mensajeLbl, comp1Lbl, comp2Lbl;
+	private JLabel mensajeLbl, comp1Lbl, comp2Lbl, infoLbl1, infoLbl2;
 	private JButton compararBtn, regresarBtn;
 	
 	public PanelComparar() {
@@ -25,20 +25,30 @@ public class PanelComparar extends JPanel {
 	public void activarPanel() {
 	
 		comp1Lbl = new JLabel("Placa 1");
-		comp1Lbl.setBounds(100, 45, 150, 20);
+		comp1Lbl.setBounds(100, 10, 150, 20);
 		this.add(comp1Lbl);
 		
 		comp1Txt = new JTextField();
-		comp1Txt.setBounds(50, 70, 150, 20);
+		comp1Txt.setBounds(50, 30, 150, 20);
 		this.add(comp1Txt);
 		
 		comp2Lbl = new JLabel("Placa 2");
-		comp2Lbl.setBounds(300, 45, 150, 20);
+		comp2Lbl.setBounds(300, 10, 150, 20);
 		this.add(comp2Lbl);
 		
 		comp2Txt = new JTextField();
-		comp2Txt.setBounds(250, 70, 150, 20);
+		comp2Txt.setBounds(250, 30, 150, 20);
 		this.add(comp2Txt);
+		
+		infoLbl1 = new JLabel();
+		infoLbl1.setBounds(50, -70, 300, 300);
+		infoLbl1.setVisible(true);
+		this.add(infoLbl1);
+		
+		infoLbl2 = new JLabel();
+		infoLbl2.setBounds(250, -70, 300, 300);
+		infoLbl2.setVisible(true);
+		this.add(infoLbl2);
 		
 		compararBtn = new JButton("Comparar");
 		compararBtn.setBounds(270,200, 100, 30);
@@ -104,6 +114,22 @@ public class PanelComparar extends JPanel {
 
 	public void setRegresarBtn(JButton regresarBtn) {
 		this.regresarBtn = regresarBtn;
+	}
+
+	public JLabel getInfoLbl1() {
+		return infoLbl1;
+	}
+
+	public void setInfoLbl1(JLabel infoLbl1) {
+		this.infoLbl1 = infoLbl1;
+	}
+
+	public JLabel getInfoLbl2() {
+		return infoLbl2;
+	}
+
+	public void setInfoLbl2(JLabel infoLbl2) {
+		this.infoLbl2 = infoLbl2;
 	}
 	
 }

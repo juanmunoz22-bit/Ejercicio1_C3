@@ -23,7 +23,7 @@ public class PanelAgregar extends JPanel {
 	private JTextField marcaTxt, modeloTxt, placaTxt, puertasTxt, capacidadTxt, tipoTxt;
 
 	public PanelAgregar() {
-		TitledBorder border = new TitledBorder("VEHICULOS 2");
+		TitledBorder border = new TitledBorder("VEHICULOS");
 
 		border.setTitleFont(new Font("arial", Font.BOLD, 16));
 		setLayout(null);

@@ -31,6 +31,7 @@ import javax.swing.border.TitledBorder;
 		setVisible(true);
 		setBounds(0, 260, 460, 270);
 		setBorder(border);
+		add(pc);
 		activarPanelDos();
 	}
 		public void activarPanelDos() {
@@ -53,12 +54,12 @@ import javax.swing.border.TitledBorder;
 		
 		//Configuramos la vista
 		mensajeLbl.setBounds(10, 20, 290, 20);
-		modeloRad.setBounds(250, 50, 200, 30);
-		marcaRad.setBounds(250, 80, 200, 30);
-		placaRad.setBounds(250, 110, 200, 30);
-		capacRad.setBounds(250, 140, 200, 30);
-		puertaRad.setBounds(250, 170, 200, 30);
-		tipoRad.setBounds(250, 200, 200, 30);
+		modeloRad.setBounds(250, 60, 200, 30);
+		marcaRad.setBounds(250, 90, 200, 30);
+		placaRad.setBounds(250, 120, 200, 30);
+		capacRad.setBounds(250, 120, 200, 30);
+		puertaRad.setBounds(250, 150, 200, 30);
+		tipoRad.setBounds(250, 180, 200, 30);
 	
 		venderBtn.setBounds(10, 50, 210, 180);
 		
@@ -73,8 +74,8 @@ import javax.swing.border.TitledBorder;
 		buttonG.add(modeloRad);
 		this.add(marcaRad);
 		buttonG.add(marcaRad);	
-		this.add(placaRad);
-		buttonG.add(placaRad);
+		//this.add(placaRad);
+		//buttonG.add(placaRad);
 		this.add(capacRad);
 		buttonG.add(capacRad);
 		this.add(puertaRad);
