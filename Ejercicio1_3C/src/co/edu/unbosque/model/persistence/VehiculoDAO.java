@@ -19,14 +19,7 @@ public class VehiculoDAO implements Compara {
 	}
 
 	// CRUD
-	public String buscarVehiculo(ArrayList<Vehiculo> vehiculos) {
-		String texto = "";
-		for (int i = 0; i < vehiculos.size(); i++) {
-			texto = texto.concat(vehiculos.get(i).toString() + "\n");
-		}
-		return texto;
-	}
-
+	
 	public Vehiculo buscarVehiculo(String placa, ArrayList<Vehiculo> vehiculos) {
 		Vehiculo encontrado = null;
 		if (!vehiculos.isEmpty()) {
