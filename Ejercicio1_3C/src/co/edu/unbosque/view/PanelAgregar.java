@@ -94,6 +94,10 @@ public class PanelAgregar extends JPanel {
 
 	}
 
+	public JButton getAgregarBtn() {
+		return agregarBtn;
+	}
+
 	public JLabel getMarcaLbl() {
 		return marcaLbl;
 	}

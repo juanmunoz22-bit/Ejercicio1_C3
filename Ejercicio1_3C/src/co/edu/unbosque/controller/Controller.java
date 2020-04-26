@@ -26,7 +26,6 @@ public class Controller implements ActionListener {
 		archivo = new Archivo(file);
 		vehiculo = new VehiculoDAO(archivo);
 		vehiculos = archivo.leerArchivo(file);
-		
 
 	}
 
@@ -40,7 +39,6 @@ public class Controller implements ActionListener {
 		vp.getPo().getTipoRad().addActionListener(listener);
 		vp.getPo().getMarcaRad().addActionListener(listener);
 		vp.getPo().getCompararBtn().addActionListener(listener);
-		
 
 	}
 
@@ -56,6 +54,23 @@ public class Controller implements ActionListener {
 
 		}
 
+		if (vp.getPi().getPa().getAgregarBtn() == event.getSource()) {
+
+			if (vp.getPi().getPa().getCapacidadTxt().getText().isEmpty()
+					|| vp.getPi().getPa().getTipoTxt().getText().isEmpty()
+					|| vp.getPi().getPa().getMarcaTxt().getText().isEmpty()
+					|| vp.getPi().getPa().getModeloTxt().getText().isEmpty()
+					|| vp.getPi().getPa().getPlacaTxt().getText().isEmpty()
+					|| vp.getPi().getPa().getPuertasTxt().getText().isEmpty()) {
+				
+				vp.mostrarMensaje("Todos Los campos son obligatorios", "ERROR");
+				
+			} else {
+				
+			}
+
+		}
+
 		// Oprimir boton eliminar
 
 		if (vp.getPi().getEliminarBtn() == event.getSource()) {
@@ -68,14 +83,6 @@ public class Controller implements ActionListener {
 			// oprimir el boton regresar en el panel eliminar
 		}
 
-		// if (vp.getPi().getRegDosBtn() == event.getSource()) {
-
-		// vp.getPi().getPlacaLbl().setVisible(false);
-		// vp.getPi().getPlacaTxt().setVisible(false);
-		// vp.getPi().activarPanel();
-
-		// }
-
 		// Oprimir boton buscar
 		if (vp.getPi().getBuscarBtn() == event.getSource()) {
 
@@ -83,24 +90,16 @@ public class Controller implements ActionListener {
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 			vp.getPi().getPb().setVisible(true);
-			//vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
+			// vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
 
 		}
 
 		if (vp.getPo().getMarcaRad() == event.getSource()) {
-			int num=1;
+			int num = 1;
 			vp.getPo().desactivarPanel();
 			vp.getPo().activarComparar();
-			
+
 		}
-		
-		if (vp.getPo().getCompararBtn()== event.getSource()) {
-			System.out.println("Hola");
-		}
-		
-		
-		
-		
 
 	}
 
