@@ -1,5 +1,7 @@
 package co.edu.unbosque.view;
 
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -16,6 +18,7 @@ public class VentanaPrincipal extends JFrame {
 		setLocationRelativeTo(null);
 		setLayout(null);
 		setResizable(true);
+		
 		add(pi);
 		add(po);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

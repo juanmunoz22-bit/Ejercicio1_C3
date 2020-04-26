@@ -2,6 +2,8 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.GridLayout;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
@@ -53,9 +55,9 @@ public class PanelUno extends JPanel {
 		eliminarBtn.setFont(new Font("arial", Font.BOLD, 18));
 		// Configuramos la vista
 
-		agregarBtn.setBounds(20, 40, 130, 130);
-		buscarBtn.setBounds(165, 40, 130, 130);
-		eliminarBtn.setBounds(310, 40, 130, 130);
+		agregarBtn.setBounds(20, 40, 130, 180);
+		buscarBtn.setBounds(165, 40, 130, 180);
+		eliminarBtn.setBounds(310, 40, 130, 180);
 
 		// Agregamos los botones al panel
 

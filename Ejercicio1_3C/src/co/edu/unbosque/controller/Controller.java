@@ -39,7 +39,7 @@ public class Controller implements ActionListener {
 		vp.getPo().getTipoRad().addActionListener(listener);
 		vp.getPo().getMarcaRad().addActionListener(listener);
 		vp.getPo().getCompararBtn().addActionListener(listener);
-
+		vp.getPi().getPa().getRegresarBtn().addActionListener(listener);
 	}
 
 	public void actionPerformed(ActionEvent event) {
@@ -47,13 +47,21 @@ public class Controller implements ActionListener {
 		// Oprimir boton agregar de la ventana principal
 		if (vp.getPi().getAgregarBtn() == event.getSource()) {
 
+			
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 			vp.getPi().getPa().setVisible(true);
 
+			
 		}
-
+		if (vp.getPi().getPa().getRegresarBtn() == event.getSource()) {
+		
+			vp.getPi().getPa().setVisible(false);
+			vp.getPi().setVisible(true);
+			
+			
+		}
 		if (vp.getPi().getPa().getAgregarBtn() == event.getSource()) {
 
 			if (vp.getPi().getPa().getCapacidadTxt().getText().isEmpty()

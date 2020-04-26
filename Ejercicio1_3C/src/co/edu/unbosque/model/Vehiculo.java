@@ -5,12 +5,14 @@ import java.io.Serializable;
 public class Vehiculo implements Serializable {
 
 	private static final long serialVersionUID = -4168350744565922022L;
-	private String marca;
-	private int modelo;
+	
 	private String placa;
+	private String marca;
+	private String tipo;
+	private int modelo;
 	private int puertas;
 	private int capacidad;
-	private String tipo;
+	
 
 	public Vehiculo(String marca, int modelo, String placa, int puertas, int capacidad, String tipo) {
 		this.marca = marca;
