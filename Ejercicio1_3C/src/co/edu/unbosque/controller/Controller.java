@@ -341,10 +341,10 @@ public class Controller implements ActionListener {
 					if (vehiculo.comparar(num, v1, v2) == 1) {
 						vp.mostrarMensaje("Los vehiculos tienen la misma capacidad", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==0) {
+					if (vehiculo.comparar(num, v1, v2)==-1) {
 						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene mas capacidad", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==-1) {
+					if (vehiculo.comparar(num, v1, v2)==-0) {
 						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " tiene menos capacidad", "INFORMACION");
 					}
 				}
