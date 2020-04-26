@@ -2,30 +2,21 @@ package co.edu.unbosque.view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.GridLayout;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
 
 public class PanelUno extends JPanel {
 
 	private static final long serialVersionUID = -8961290724383069814L;
 
-	private JButton agregarBtn, buscarBtn, eliminarBtn, registraBtn, regresarBtn;
+	private PanelAgregar pa = new PanelAgregar();
 
-	public JButton getRegistraBtn() {
-		return registraBtn;
-	}
+	private PanelEliminar pe = new PanelEliminar();
 
-	public JButton getRegresarBtn() {
-		return regresarBtn;
-	}
+	private PanelBuscar pb = new PanelBuscar();
 
-	private JLabel marcaLbl, modeloLbl, placaLbl, puertasLbl, capacidadLbl, tipoLbl, infoLbl;
-
-	private JTextField marcaTxt, modeloTxt, placaTxt, puertasTxt, capacidadTxt, tipoTxt;
+	private JButton agregarBtn, buscarBtn, eliminarBtn;
 
 	public PanelUno() {
 
@@ -37,6 +28,9 @@ public class PanelUno extends JPanel {
 		setVisible(true);
 		setBounds(0, 10, 460, 250);
 		setBorder(border);
+		add(pa);
+		add(pe);
+		add(pb);
 		activarPanel();
 
 	}
@@ -70,137 +64,9 @@ public class PanelUno extends JPanel {
 		this.add(eliminarBtn);
 
 	}
-	
-	public void activarAgregar() {
-		marcaLbl = new JLabel("Marca");
-		marcaLbl.setBounds(10, 20, 100, 20);
-		this.add(marcaLbl);
-		
-		modeloLbl = new JLabel("Modelo");
-		modeloLbl.setBounds(10, 50, 100, 20);
-		this.add(modeloLbl);
-		
-		placaLbl = new JLabel("Placa");
-		placaLbl.setBounds(10, 80, 100, 20);
-		this.add(placaLbl);
-		
-		puertasLbl = new JLabel("# Puertas");
-		puertasLbl.setBounds(10, 110, 100, 20);
-		this.add(puertasLbl);
-		
-		capacidadLbl = new JLabel("Capacidad");
-		capacidadLbl.setBounds(10, 140, 100, 20);
-		this.add(capacidadLbl);
-		
-		regresarBtn = new JButton("Regresar");
-		regresarBtn.setBounds(10, 170, 100, 20);
-		this.add(regresarBtn);
-		
-		
-		
-	}
-
-	
 
 	public JButton getEliminarBtn() {
 		return eliminarBtn;
-	}
-
-	
-	public JLabel getMarcaLbl() {
-		return marcaLbl;
-	}
-
-	public void setMarcaLbl(JLabel marcaLbl) {
-		this.marcaLbl = marcaLbl;
-	}
-
-	public JLabel getModeloLbl() {
-		return modeloLbl;
-	}
-
-	public void setModeloLbl(JLabel modeloLbl) {
-		this.modeloLbl = modeloLbl;
-	}
-
-	public JLabel getPlacaLbl() {
-		return placaLbl;
-	}
-
-	public void setPlacaLbl(JLabel placaLbl) {
-		this.placaLbl = placaLbl;
-	}
-
-	public JLabel getPuertasLbl() {
-		return puertasLbl;
-	}
-
-	public void setPuertasLbl(JLabel puertasLbl) {
-		this.puertasLbl = puertasLbl;
-	}
-
-	public JLabel getCapacidadLbl() {
-		return capacidadLbl;
-	}
-
-	public void setCapacidadLbl(JLabel capacidadLbl) {
-		this.capacidadLbl = capacidadLbl;
-	}
-
-	public JLabel getTipoLbl() {
-		return tipoLbl;
-	}
-
-	public void setTipoLbl(JLabel tipoLbl) {
-		this.tipoLbl = tipoLbl;
-	}
-
-	public JTextField getMarcaTxt() {
-		return marcaTxt;
-	}
-
-	public void setMarcaTxt(JTextField marcaTxt) {
-		this.marcaTxt = marcaTxt;
-	}
-
-	public JTextField getModeloTxt() {
-		return modeloTxt;
-	}
-
-	public void setModeloTxt(JTextField modeloTxt) {
-		this.modeloTxt = modeloTxt;
-	}
-
-	public JTextField getPlacaTxt() {
-		return placaTxt;
-	}
-
-	public void setPlacaTxt(JTextField placaTxt) {
-		this.placaTxt = placaTxt;
-	}
-
-	public JTextField getPuertasTxt() {
-		return puertasTxt;
-	}
-
-	public void setPuertasTxt(JTextField puertasTxt) {
-		this.puertasTxt = puertasTxt;
-	}
-
-	public JTextField getCapacidadTxt() {
-		return capacidadTxt;
-	}
-
-	public void setCapacidadTxt(JTextField capacidadTxt) {
-		this.capacidadTxt = capacidadTxt;
-	}
-
-	public JTextField getTipoTxt() {
-		return tipoTxt;
-	}
-
-	public void setTipoTxt(JTextField tipoTxt) {
-		this.tipoTxt = tipoTxt;
 	}
 
 	public JButton getAgregarBtn() {
@@ -211,5 +77,28 @@ public class PanelUno extends JPanel {
 		return buscarBtn;
 	}
 
+	public PanelAgregar getPa() {
+		return pa;
+	}
+
+	public void setPa(PanelAgregar pa) {
+		this.pa = pa;
+	}
+
+	public PanelEliminar getPe() {
+		return pe;
+	}
+
+	public void setPe(PanelEliminar pe) {
+		this.pe = pe;
+	}
+
+	public PanelBuscar getPb() {
+		return pb;
+	}
+
+	public void setPb(PanelBuscar pb) {
+		this.pb = pb;
+	}
 
 }

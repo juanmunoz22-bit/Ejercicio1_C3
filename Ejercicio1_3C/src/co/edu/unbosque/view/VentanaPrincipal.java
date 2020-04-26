@@ -9,7 +9,6 @@ public class VentanaPrincipal extends JFrame {
 	private static final long serialVersionUID = 6117540591733912503L;
 	private PanelUno pi = new PanelUno();
 	private PanelDos po = new PanelDos();
-	private JButton regresarBtn;
 	public VentanaPrincipal() {
 
 		setTitle("Ventana Principal");
@@ -17,9 +16,6 @@ public class VentanaPrincipal extends JFrame {
 		setLocationRelativeTo(null);
 		setLayout(null);
 		setResizable(true);
-		regresarBtn = new JButton("Regresar");
-		regresarBtn.setBounds(100, 280, 100, 20);
-		this.add(regresarBtn);
 		add(pi);
 		add(po);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -27,9 +23,6 @@ public class VentanaPrincipal extends JFrame {
 
 	}
 	
-	public JButton getRegresarBtn() {
-		return regresarBtn;
-	}
 
 	public PanelUno getPi() {
 		return pi;

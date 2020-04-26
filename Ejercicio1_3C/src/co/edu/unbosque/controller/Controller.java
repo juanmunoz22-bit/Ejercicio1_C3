@@ -40,7 +40,6 @@ public class Controller implements ActionListener {
 		vp.getPo().getTipoRad().addActionListener(listener);
 		vp.getPo().getMarcaRad().addActionListener(listener);
 		vp.getPo().getCompararBtn().addActionListener(listener);
-		vp.getRegresarBtn().addActionListener(listener);
 		
 
 	}
@@ -53,7 +52,7 @@ public class Controller implements ActionListener {
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
-			vp.getPi().activarAgregar();
+			vp.getPi().getPa().setVisible(true);
 
 		}
 
@@ -64,6 +63,7 @@ public class Controller implements ActionListener {
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
+			vp.getPi().getPe().setVisible(true);
 
 			// oprimir el boton regresar en el panel eliminar
 		}
@@ -77,14 +77,15 @@ public class Controller implements ActionListener {
 		// }
 
 		// Oprimir boton buscar
-		/*if (vp.getPi().getBuscarBtn() == event.getSource()) {
+		if (vp.getPi().getBuscarBtn() == event.getSource()) {
 
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
-			vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
+			vp.getPi().getPb().setVisible(true);
+			//vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
 
-		}*/
+		}
 
 		if (vp.getPo().getMarcaRad() == event.getSource()) {
 			int num=1;
