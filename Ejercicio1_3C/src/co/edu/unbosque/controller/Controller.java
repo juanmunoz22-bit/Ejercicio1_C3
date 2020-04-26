@@ -35,10 +35,6 @@ public class Controller implements ActionListener {
 		vp.getPi().getAgregarBtn().addActionListener(listener);
 		vp.getPi().getEliminarBtn().addActionListener(listener);
 		vp.getPi().getBuscarBtn().addActionListener(listener);
-		vp.getPo().getCompararBtn().addActionListener(listener);
-		vp.getPo().getTipoRad().addActionListener(listener);
-		vp.getPo().getMarcaRad().addActionListener(listener);
-		vp.getPo().getCompararBtn().addActionListener(listener);
 		vp.getPi().getPa().getRegresarBtn().addActionListener(listener);
 		vp.getPi().getPa().getAgregarBtn().addActionListener(listener);
 		vp.getPi().getPe().getRegresarBtn().addActionListener(listener);
@@ -163,12 +159,12 @@ public class Controller implements ActionListener {
 
 		}
 
-		if (vp.getPo().getMarcaRad() == event.getSource()) {
-			int num = 1;
-			vp.getPo().desactivarPanel();
-			vp.getPo().activarComparar();
+		//if (vp.getPo().getMarcaRad() == event.getSource()) {
+			//int num = 1;
+		//	vp.getPo().desactivarPanel();
+		
 
-		}
+		
 
 	}
 
