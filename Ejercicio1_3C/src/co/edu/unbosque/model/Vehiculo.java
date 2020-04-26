@@ -9,12 +9,12 @@ public class Vehiculo implements Serializable {
 	private String placa;
 	private String marca;
 	private String tipo;
-	private int modelo;
-	private int puertas;
-	private int capacidad;
+	private String modelo;
+	private String puertas;
+	private String capacidad;
 	
 
-	public Vehiculo(String marca, int modelo, String placa, int puertas, int capacidad, String tipo) {
+	public Vehiculo(String marca, String modelo, String placa, String puertas, String capacidad, String tipo) {
 		this.marca = marca;
 		this.modelo = modelo;
 		this.placa = placa;
@@ -33,11 +33,11 @@ public class Vehiculo implements Serializable {
 		this.marca = marca;
 	}
 
-	public int getModelo() {
+	public String getModelo() {
 		return modelo;
 	}
 
-	public void setModelo(int modelo) {
+	public void setModelo(String modelo) {
 		this.modelo = modelo;
 	}
 
@@ -49,19 +49,19 @@ public class Vehiculo implements Serializable {
 		this.placa = placa;
 	}
 
-	public int getPuertas() {
+	public String getPuertas() {
 		return puertas;
 	}
 
-	public void setPuertas(int puertas) {
+	public void setPuertas(String puertas) {
 		this.puertas = puertas;
 	}
 
-	public int getCapacidad() {
+	public String getCapacidad() {
 		return capacidad;
 	}
 
-	public void setCapacidad(int capacidad) {
+	public void setCapacidad(String capacidad) {
 		this.capacidad = capacidad;
 	}
 

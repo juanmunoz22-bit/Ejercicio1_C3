@@ -86,10 +86,8 @@ public class Controller implements ActionListener {
 
 			} else {
 				if (vehiculo.agregarVehiculo(vp.getPi().getPa().getMarcaTxt().getText(),
-						Integer.parseInt(vp.getPi().getPa().getModeloTxt().getText()),
-						(vp.getPi().getPa().getPlacaTxt().getText()),
-						Integer.parseInt(vp.getPi().getPa().getPuertasTxt().getText()),
-						Integer.parseInt(vp.getPi().getPa().getCapacidadTxt().getText()),
+						vp.getPi().getPa().getModeloTxt().getText(), vp.getPi().getPa().getPlacaTxt().getText(),
+						vp.getPi().getPa().getPuertasTxt().getText(), vp.getPi().getPa().getCapacidadTxt().getText(),
 						vp.getPi().getPa().getTipoTxt().getText(), vehiculos, file)) {
 
 					vp.mostrarMensaje("Vehiculo agregado", "INFORMACION");
@@ -257,18 +255,118 @@ public class Controller implements ActionListener {
 
 		if (vp.getPo().getPc().getCompararBtn() == event.getSource()) {
 			try {
+				if (vp.getPo().getPc().getComp1Txt().getText().isEmpty()
+						|| vp.getPo().getPc().getComp2Txt().getText().isEmpty()) {
+					vp.mostrarMensaje("Todos los campos son requeridos", "ERROR");
+				}
 
 				String v1 = vp.getPo().getPc().getComp1Txt().getText();
 				String v2 = vp.getPo().getPc().getComp2Txt().getText();
+				// MARCA
 				if (num == 1) {
 					for (int i = 0; i <= vehiculos.size() - 1; i++) {
 						if (v1.equals(vehiculos.get(i).getPlaca())) {
 							vp.getPo().getPc().getInfoLbl1().setText(vehiculos.get(i).getMarca());
 						}
 					}
-				}
-				vehiculo.comparar(num, v1, v2);
+					for (int j = 0; j <= vehiculos.size() - 1; j++) {
+						if (v2.equals(vehiculos.get(j).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl2().setText(vehiculos.get(j).getMarca());
+						}
+					}
+					if (vehiculo.comparar(num, v1, v2) == 1) {
+						vp.mostrarMensaje("Los vehiculos son de la misma marca", "INFORMACION");
+					} else {
+						vp.mostrarMensaje("Los vehiculos tienen diferente marca", "INFORMACION");
+					}
 
+				}
+				// MODELO
+				if (num == 2) {
+					for (int i = 0; i <= vehiculos.size() - 1; i++) {
+						if (v1.equals(vehiculos.get(i).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl1().setText(vehiculos.get(i).getModelo());
+						}
+					}
+					for (int j = 0; j <= vehiculos.size() - 1; j++) {
+						if (v2.equals(vehiculos.get(j).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl2().setText(vehiculos.get(j).getModelo());
+						}
+					}
+					if (vehiculo.comparar(num, v1, v2) == 1) {
+						vp.mostrarMensaje("Los vehiculos son del mismo año", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==0) {
+						vp.mostrarMensaje("El vehiculo con placa " + v1 + " es mas nuevo", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==-1) {
+						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " es mas antiguo", "INFORMACION");
+					}
+
+				}
+				// PUERTAS
+				if (num == 3) {
+					for (int i = 0; i <= vehiculos.size() - 1; i++) {
+						if (v1.equals(vehiculos.get(i).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl1().setText(vehiculos.get(i).getPuertas());
+						}
+					}
+					for (int j = 0; j <= vehiculos.size() - 1; j++) {
+						if (v2.equals(vehiculos.get(j).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl2().setText(vehiculos.get(j).getPuertas());
+						}
+					}
+					if (vehiculo.comparar(num, v1, v2) == 1) {
+						vp.mostrarMensaje("Los vehiculos tienen las mismas puertas", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==0) {
+						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene mas puertas", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==-1) {
+						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " tiene menos puertas", "INFORMACION");
+					}
+				}
+				//CAPACIDAD
+				if (num == 4) {
+					for (int i = 0; i <= vehiculos.size() - 1; i++) {
+						if (v1.equals(vehiculos.get(i).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl1().setText(vehiculos.get(i).getCapacidad());
+						}
+					}
+					for (int j = 0; j <= vehiculos.size() - 1; j++) {
+						if (v2.equals(vehiculos.get(j).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl2().setText(vehiculos.get(j).getCapacidad());
+						}
+					}
+					if (vehiculo.comparar(num, v1, v2) == 1) {
+						vp.mostrarMensaje("Los vehiculos tienen la misma capacidad", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==0) {
+						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene mas capacidad", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==-1) {
+						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " tiene menos capacidad", "INFORMACION");
+					}
+				}
+				//TIPO
+				if (num == 5) {
+					for (int i = 0; i <= vehiculos.size() - 1; i++) {
+						if (v1.equals(vehiculos.get(i).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl1().setText(vehiculos.get(i).getTipo());
+						}
+					}
+					for (int j = 0; j <= vehiculos.size() - 1; j++) {
+						if (v2.equals(vehiculos.get(j).getPlaca())) {
+							vp.getPo().getPc().getInfoLbl2().setText(vehiculos.get(j).getTipo());
+						}
+					}
+					if (vehiculo.comparar(num, v1, v2) == 1) {
+						vp.mostrarMensaje("Los vehiculos son del mismo tipo", "INFORMACION");
+					}
+					if (vehiculo.comparar(num, v1, v2)==0) {
+						vp.mostrarMensaje("Los vehiculos son de diferente tipo", "INFORMACION");
+					}
+				}
 			} catch (NumberFormatException n) {
 				if (vp.getPo().getPc().getComp1Txt().getText().isEmpty()
 						|| vp.getPo().getPc().getComp2Txt().getText().isEmpty()) {

@@ -13,7 +13,7 @@ public class VentanaPrincipal extends JFrame {
 	private PanelDos po = new PanelDos();
 	public VentanaPrincipal() {
 
-		setTitle("Ventana Principal");
+		setTitle("Concesionario");
 		setSize(480, 600);
 		setLocationRelativeTo(null);
 		setLayout(null);

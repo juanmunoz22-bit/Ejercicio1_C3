@@ -40,7 +40,7 @@ public class VehiculoDAO implements Compara {
 		return encontrado;
 	}
 
-	public boolean agregarVehiculo(String marca, int modelo, String placa, int puertas, int capacidad, String tipo,
+	public boolean agregarVehiculo(String marca, String modelo, String placa, String puertas, String capacidad, String tipo,
 			ArrayList<Vehiculo> vehiculos, File file) {
 
 		Vehiculo nuevo = new Vehiculo(marca, modelo, placa, puertas, capacidad, tipo);
@@ -87,9 +87,9 @@ public class VehiculoDAO implements Compara {
 		switch (num) {
 		// marca
 		case 1:
-			if (v1 == v2) {
+			if (v1.equals(v2)) {
 				a = 1;
-			} else {
+			} else{
 				a = 0;
 			}
 
@@ -97,7 +97,7 @@ public class VehiculoDAO implements Compara {
 
 		// modelo
 		case 2:
-			if (v1 == v2) {
+			if (v1.equals(v2)) {
 				a = 1;
 			}
 			if (Integer.parseInt(v1) < Integer.parseInt(v2)) {
@@ -111,7 +111,7 @@ public class VehiculoDAO implements Compara {
 
 		// puertas
 		case 3:
-			if (v1 == v2) {
+			if (v1.equals(v2)) {
 				a = 1;
 			}
 			if (Integer.parseInt(v1) < Integer.parseInt(v2)) {
@@ -125,7 +125,7 @@ public class VehiculoDAO implements Compara {
 
 		// capacidad
 		case 4:
-			if (v1 == v2) {
+			if (v1.equals(v2)) {
 				a = 1;
 			}
 			if (Integer.parseInt(v1) < Integer.parseInt(v2)) {
@@ -140,7 +140,7 @@ public class VehiculoDAO implements Compara {
 		// tipo
 		case 5:
 
-			if (v1 == v2) {
+			if (v1.equals(v2)) {
 				a = 1;
 			} else {
 				a = 0;
