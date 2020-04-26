@@ -17,7 +17,7 @@ public class VehiculoDAO implements Compara {
 	}
 
 	// CRUD
-	public String verEmpleados(ArrayList<Vehiculo> vehiculos) {
+	public String buscarVehiculo(ArrayList<Vehiculo> vehiculos) {
 		String texto = "";
 		for (int i = 0; i < vehiculos.size(); i++) {
 			texto = texto.concat(vehiculos.get(i).toString() + "\n");
@@ -25,7 +25,7 @@ public class VehiculoDAO implements Compara {
 		return texto;
 	}
 
-	public Vehiculo buscarEmpleado(String placa, ArrayList<Vehiculo> vehiculos) {
+	public Vehiculo buscarVehiculo(String placa, ArrayList<Vehiculo> vehiculos) {
 		Vehiculo encontrado = null;
 		if (!vehiculos.isEmpty()) {
 			for (int i = 0; i < vehiculos.size(); i++) {
@@ -38,12 +38,12 @@ public class VehiculoDAO implements Compara {
 		return encontrado;
 	}
 
-	public boolean agregarEmpleado(String marca, int modelo, String placa, int puertas, int capacidad, String tipo,
+	public boolean agregarVehiculo(String marca, int modelo, String placa, int puertas, int capacidad, String tipo,
 			ArrayList<Vehiculo> vehiculos, File file) {
 
 		Vehiculo nuevo = new Vehiculo(marca, modelo, placa, puertas, capacidad, tipo);
 
-		if (buscarEmpleado(placa, vehiculos) == null) {
+		if (buscarVehiculo(placa, vehiculos) == null) {
 			vehiculos.add(nuevo);
 
 			archivo.escribirEnArchivo(vehiculos, file);
@@ -54,10 +54,10 @@ public class VehiculoDAO implements Compara {
 
 	}
 
-	public boolean eliminarEmpleado(String placa, ArrayList<Vehiculo> vehiculos, File file) {
+	public boolean eliminarVehiculo(String placa, ArrayList<Vehiculo> vehiculos, File file) {
 		boolean resp = false;
 		try {
-			Vehiculo e = buscarEmpleado(placa, vehiculos);
+			Vehiculo e = buscarVehiculo(placa, vehiculos);
 			if (e != null) {
 				vehiculos.remove(e);
 				file.delete();

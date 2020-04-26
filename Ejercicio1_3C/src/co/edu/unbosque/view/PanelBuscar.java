@@ -13,6 +13,7 @@ public class PanelBuscar extends JPanel {
 	private JTextField placaTxt;
 	private JButton buscarBtn;
 	private JButton regresarBtn;
+	private String texto;
 
 	public PanelBuscar() {
 
@@ -35,7 +36,8 @@ public class PanelBuscar extends JPanel {
 		this.add(placaTxt);
 		
 		infoLbl = new JLabel();
-		infoLbl.setBounds(50, -100, 300, 300);
+		infoLbl.setBounds(50, -70, 300, 300);
+		infoLbl.setVisible(true);
 		this.add(infoLbl);
 		
 		buscarBtn = new JButton("Buscar");
@@ -59,8 +61,16 @@ public class PanelBuscar extends JPanel {
 		return infoLbl;
 	}
 
-	public void setInfoLbl(JLabel infoLbl) {
-		this.infoLbl = infoLbl;
+	public void setInfoLbl(String texto) {
+		this.texto = texto;
+	}
+
+	public JButton getBuscarBtn() {
+		return buscarBtn;
+	}
+
+	public void setBuscarBtn(JButton buscarBtn) {
+		this.buscarBtn = buscarBtn;
 	}
 
 	public JTextField getPlacaTxt() {

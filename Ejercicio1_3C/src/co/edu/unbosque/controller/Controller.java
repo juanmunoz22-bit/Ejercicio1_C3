@@ -42,7 +42,10 @@ public class Controller implements ActionListener {
 		vp.getPi().getPa().getRegresarBtn().addActionListener(listener);
 		vp.getPi().getPa().getAgregarBtn().addActionListener(listener);
 		vp.getPi().getPe().getRegresarBtn().addActionListener(listener);
+		vp.getPi().getPe().getEliminarBtn().addActionListener(listener);
 		vp.getPi().getPb().getRegresarBtn().addActionListener(listener);
+		vp.getPi().getPb().getBuscarBtn().addActionListener(listener);
+
 	}
 
 	public void actionPerformed(ActionEvent event) {
@@ -78,15 +81,17 @@ public class Controller implements ActionListener {
 				vp.mostrarMensaje("Todos Los campos son obligatorios", "ERROR");
 
 			} else {
-				if (vehiculo.agregarEmpleado(vp.getPi().getPa().getMarcaTxt().getText(),
+				if (vehiculo.agregarVehiculo(vp.getPi().getPa().getMarcaTxt().getText(),
 						Integer.parseInt(vp.getPi().getPa().getModeloTxt().getText()),
 						(vp.getPi().getPa().getPlacaTxt().getText()),
 						Integer.parseInt(vp.getPi().getPa().getPuertasTxt().getText()),
 						Integer.parseInt(vp.getPi().getPa().getCapacidadTxt().getText()),
 						vp.getPi().getPa().getTipoTxt().getText(), vehiculos, file)) {
-					
+
 					vp.mostrarMensaje("Vehiculo agregado", "INFORMACION");
-					
+
+				}else {
+					vp.mostrarMensaje("Esta placa ya existe", "ERROR");
 				}
 			}
 
@@ -100,15 +105,25 @@ public class Controller implements ActionListener {
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 			vp.getPi().getPe().setVisible(true);
+			System.out.println(vehiculos.get(0).getPlaca());
 
 			// oprimir el boton regresar en el panel eliminar
 		}
-		
-		if(vp.getPi().getPe()==event.getSource()) {
-			String placa=vp.getPi().getPb().getPlacaTxt().getText();
-			
+
+		if (vp.getPi().getPe().getEliminarBtn() == event.getSource()) {
+			String placa = vp.getPi().getPe().getPlacaTxt().getText();
+			System.out.println(placa);
+			if (vehiculo.buscarVehiculo(placa, vehiculos) != null) {
+				if (vehiculo.eliminarVehiculo(placa, vehiculos, file)) {
+					vp.mostrarMensaje("Se ha eliminado el vehiculo", "INFORMACION");
+				} else {
+					vp.mostrarMensaje("No se ha eliminado el vehiculo", "INFORMACION");
+				}
+			} else {
+				vp.mostrarMensaje("El vehiculo con placa " + placa + " NO existe en el sistema", "ERROR");
+			}
 		}
-		
+
 		if (vp.getPi().getPe().getRegresarBtn() == event.getSource()) {
 
 			vp.getPi().getPe().setVisible(false);
@@ -128,6 +143,16 @@ public class Controller implements ActionListener {
 			// vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
 
 		}
+
+		if (vp.getPi().getPb().getBuscarBtn() == event.getSource()) {
+			for (int i = 0; i <= vehiculos.size() - 1; i++) {
+				vp.getPi().getPb().getInfoLbl().setText("<html>" + vehiculos.get(i).getMarca() + "<br>"
+						+ vehiculos.get(i).getModelo() + "<br>" + vehiculos.get(i).getTipo() + "<br>"
+						+ vehiculos.get(i).getPuertas()+"<br>"+vehiculos.get(i).getCapacidad() +"</html>");
+
+			}
+		}
+
 		if (vp.getPi().getPb().getRegresarBtn() == event.getSource()) {
 
 			vp.getPi().getPb().setVisible(false);
