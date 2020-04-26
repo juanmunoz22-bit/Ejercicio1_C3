@@ -45,4 +45,37 @@ public class PanelEliminar extends JPanel {
 	
 	}
 
+	public JLabel getPlacaLbl() {
+		return placaLbl;
+	}
+
+	public void setPlacaLbl(JLabel placaLbl) {
+		this.placaLbl = placaLbl;
+	}
+
+	public JTextField getPlacaTxt() {
+		return placaTxt;
+	}
+
+	public void setPlacaTxt(JTextField placaTxt) {
+		this.placaTxt = placaTxt;
+	}
+
+	public JButton getEliminarBtn() {
+		return eliminarBtn;
+	}
+
+	public void setEliminarBtn(JButton eliminarBtn) {
+		this.eliminarBtn = eliminarBtn;
+	}
+
+	public JButton getRegresarBtn() {
+		return regresarBtn;
+	}
+
+	public void setRegresarBtn(JButton regresarBtn) {
+		this.regresarBtn = regresarBtn;
+	}
+	
+
 }
