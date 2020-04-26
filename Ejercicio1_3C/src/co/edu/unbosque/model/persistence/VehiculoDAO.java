@@ -80,36 +80,78 @@ public class VehiculoDAO implements Compara {
 	}
 
 	@Override
-	public void comparar(int num, String v1, String v2) {
-
+	public int comparar(int num, String v1, String v2) {
+		int a = 0;
 		switch (num) {
+		// marca
 		case 1:
+			if (v1 == v2) {
+				a = 1;
+			} else {
+				a = 0;
+			}
 
 			break;
 
+		// modelo
 		case 2:
+			if (v1 == v2) {
+				a = 1;
+			}
+			if (Integer.parseInt(v1) < Integer.parseInt(v2)) {
+				a = 0;
+			}
+			if (Integer.parseInt(v1) > Integer.parseInt(v2)) {
+				a = -1;
+			}
 
 			break;
 
+		// puertas
 		case 3:
+			if (v1 == v2) {
+				a = 1;
+			}
+			if (Integer.parseInt(v1) < Integer.parseInt(v2)) {
+				a = 0;
+			}
+			if (Integer.parseInt(v1) > Integer.parseInt(v2)) {
+				a = -1;
+			}
 
 			break;
 
+		// capacidad
 		case 4:
+			if (v1 == v2) {
+				a = 1;
+			}
+			if (Integer.parseInt(v1) < Integer.parseInt(v2)) {
+				a = 0;
+			}
+			if (Integer.parseInt(v1) > Integer.parseInt(v2)) {
+				a = -1;
+			}
 
 			break;
 
+		// tipo
 		case 5:
 
-			break;
-
-		case 6:
+			if (v1 == v2) {
+				a = 1;
+			} else {
+				a = 0;
+			}
 
 			break;
 
 		default:
+			a = 1;
 			break;
 		}
+
+		return a;
 
 	}
 
