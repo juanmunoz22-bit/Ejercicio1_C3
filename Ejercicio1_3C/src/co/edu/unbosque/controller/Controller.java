@@ -86,7 +86,7 @@ public class Controller implements ActionListener {
 
 					vp.mostrarMensaje("Vehiculo agregado", "INFORMACION");
 
-				}else {
+				} else {
 					vp.mostrarMensaje("Esta placa ya existe", "ERROR");
 				}
 			}
@@ -141,11 +141,24 @@ public class Controller implements ActionListener {
 		}
 
 		if (vp.getPi().getPb().getBuscarBtn() == event.getSource()) {
-			for (int i = 0; i <= vehiculos.size() - 1; i++) {
-				vp.getPi().getPb().getInfoLbl().setText("<html>" + vehiculos.get(i).getMarca() + "<br>"
-						+ vehiculos.get(i).getModelo() + "<br>" + vehiculos.get(i).getTipo() + "<br>"
-						+ vehiculos.get(i).getPuertas()+"<br>"+vehiculos.get(i).getCapacidad() +"</html>");
+			
+			if (vehiculos.isEmpty()) {
+				vp.mostrarMensaje("No Hay vehiculos registrados en la base de datos", "INFORMACION");
+			}
+			String placa = vp.getPi().getPb().getPlacaTxt().getText();
+			if (!vehiculos.isEmpty()) {
+				for (int i = 0; i <= vehiculos.size() - 1; i++) {
+					if (placa.equals(vehiculos.get(i).getPlaca())) {
+						vp.getPi().getPb().getInfoLbl()
+								.setText("<html>" + vehiculos.get(i).getMarca() + "<br>" + vehiculos.get(i).getModelo()
+										+ "<br>" + vehiculos.get(i).getTipo() + "<br>" + vehiculos.get(i).getPuertas()
+										+ "<br>" + vehiculos.get(i).getCapacidad() + "</html>");
+					}
+				}
+				if (vp.getPi().getPb().getInfoLbl().getText().isEmpty()) {
+					vp.mostrarMensaje("La placa digitada no existe o no ha digitado ninguna placa", "ERROR");
 
+				}
 			}
 		}
 
@@ -159,12 +172,9 @@ public class Controller implements ActionListener {
 
 		}
 
-		//if (vp.getPo().getMarcaRad() == event.getSource()) {
-			//int num = 1;
-		//	vp.getPo().desactivarPanel();
-		
-
-		
+		// if (vp.getPo().getMarcaRad() == event.getSource()) {
+		// int num = 1;
+		// vp.getPo().desactivarPanel();
 
 	}
 
