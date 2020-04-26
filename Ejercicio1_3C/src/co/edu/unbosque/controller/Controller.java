@@ -40,6 +40,7 @@ public class Controller implements ActionListener {
 		vp.getPo().getMarcaRad().addActionListener(listener);
 		vp.getPo().getCompararBtn().addActionListener(listener);
 		vp.getPi().getPa().getRegresarBtn().addActionListener(listener);
+		vp.getPi().getPa().getAgregarBtn().addActionListener(listener);
 		vp.getPi().getPe().getRegresarBtn().addActionListener(listener);
 		vp.getPi().getPb().getRegresarBtn().addActionListener(listener);
 	}
@@ -49,22 +50,21 @@ public class Controller implements ActionListener {
 		// Oprimir boton agregar de la ventana principal
 		if (vp.getPi().getAgregarBtn() == event.getSource()) {
 
-			
 			vp.getPi().getAgregarBtn().setVisible(false);
 			vp.getPi().getEliminarBtn().setVisible(false);
 			vp.getPi().getBuscarBtn().setVisible(false);
 			vp.getPi().getPa().setVisible(true);
 
-		// Oprimir eel boton regresar en el panel agregar (vehiculo)	
+			// Oprimir eel boton regresar en el panel agregar (vehiculo)
 		}
 		if (vp.getPi().getPa().getRegresarBtn() == event.getSource()) {
-		
+
 			vp.getPi().getPa().setVisible(false);
 			vp.getPi().setVisible(true);
 			vp.getPi().getAgregarBtn().setVisible(true);
 			vp.getPi().getEliminarBtn().setVisible(true);
 			vp.getPi().getBuscarBtn().setVisible(true);
-				
+
 		}
 		if (vp.getPi().getPa().getAgregarBtn() == event.getSource()) {
 
@@ -74,11 +74,20 @@ public class Controller implements ActionListener {
 					|| vp.getPi().getPa().getModeloTxt().getText().isEmpty()
 					|| vp.getPi().getPa().getPlacaTxt().getText().isEmpty()
 					|| vp.getPi().getPa().getPuertasTxt().getText().isEmpty()) {
-				
+
 				vp.mostrarMensaje("Todos Los campos son obligatorios", "ERROR");
-				
+
 			} else {
-				
+				if (vehiculo.agregarEmpleado(vp.getPi().getPa().getMarcaTxt().getText(),
+						Integer.parseInt(vp.getPi().getPa().getModeloTxt().getText()),
+						(vp.getPi().getPa().getPlacaTxt().getText()),
+						Integer.parseInt(vp.getPi().getPa().getPuertasTxt().getText()),
+						Integer.parseInt(vp.getPi().getPa().getCapacidadTxt().getText()),
+						vp.getPi().getPa().getTipoTxt().getText(), vehiculos, file)) {
+					
+					vp.mostrarMensaje("Vehiculo agregado", "INFORMACION");
+					
+				}
 			}
 
 		}
@@ -94,14 +103,20 @@ public class Controller implements ActionListener {
 
 			// oprimir el boton regresar en el panel eliminar
 		}
-		if (vp.getPi().getPe().getRegresarBtn() == event.getSource()) {
 		
+		if(vp.getPi().getPe()==event.getSource()) {
+			String placa=vp.getPi().getPb().getPlacaTxt().getText();
+			
+		}
+		
+		if (vp.getPi().getPe().getRegresarBtn() == event.getSource()) {
+
 			vp.getPi().getPe().setVisible(false);
 			vp.getPi().setVisible(true);
 			vp.getPi().getAgregarBtn().setVisible(true);
 			vp.getPi().getEliminarBtn().setVisible(true);
 			vp.getPi().getBuscarBtn().setVisible(true);
-		
+
 		}
 		// Oprimir boton buscar
 		if (vp.getPi().getBuscarBtn() == event.getSource()) {
@@ -112,17 +127,17 @@ public class Controller implements ActionListener {
 			vp.getPi().getPb().setVisible(true);
 			// vp.getPi().activarPanelBuscar("<html>"+"<br>"+"</html>");
 
-		}	
-			if (vp.getPi().getPb().getRegresarBtn() == event.getSource()) {
-			
+		}
+		if (vp.getPi().getPb().getRegresarBtn() == event.getSource()) {
+
 			vp.getPi().getPb().setVisible(false);
 			vp.getPi().setVisible(true);
 			vp.getPi().getAgregarBtn().setVisible(true);
 			vp.getPi().getEliminarBtn().setVisible(true);
-			vp.getPi().getBuscarBtn().setVisible(true);	
-				
+			vp.getPi().getBuscarBtn().setVisible(true);
+
 		}
-		
+
 		if (vp.getPo().getMarcaRad() == event.getSource()) {
 			int num = 1;
 			vp.getPo().desactivarPanel();
