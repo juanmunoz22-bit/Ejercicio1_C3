@@ -33,6 +33,7 @@ import javax.swing.border.TitledBorder;
 		setBounds(0, 260, 460, 270);
 		setBorder(border);
 		add(pc);
+		add(pv);
 		activarPanelDos();
 	}
 		public void activarPanelDos() {

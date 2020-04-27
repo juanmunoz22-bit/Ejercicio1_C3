@@ -49,7 +49,9 @@ public class Controller implements ActionListener {
 		vp.getPo().getCapacRad().addActionListener(listener);
 		vp.getPo().getPc().getCompararBtn().addActionListener(listener);
 		vp.getPo().getPc().getRegresarBtn().addActionListener(listener);
-	//	vp.getPo().getPv().getRegresarBtn().addActionListener(listener);
+		vp.getPo().getVenderBtn().addActionListener(listener);
+		vp.getPo().getPv().getVenderBtn().addActionListener(listener);
+		vp.getPo().getPv().getRegresarBtn().addActionListener(listener);
 	}
 
 	public void actionPerformed(ActionEvent event) {
@@ -296,11 +298,11 @@ public class Controller implements ActionListener {
 					if (vehiculo.comparar(num, v1, v2) == 1) {
 						vp.mostrarMensaje("Los vehiculos son del mismo año", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==0) {
+					if (vehiculo.comparar(num, v1, v2) == 0) {
 						vp.mostrarMensaje("El vehiculo con placa " + v1 + " es mas nuevo", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==-1) {
-						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " es mas antiguo", "INFORMACION");
+					if (vehiculo.comparar(num, v1, v2) == -1) {
+						vp.mostrarMensaje("El vehiculo con placa " + v1 + " es mas antiguo", "INFORMACION");
 					}
 
 				}
@@ -319,14 +321,14 @@ public class Controller implements ActionListener {
 					if (vehiculo.comparar(num, v1, v2) == 1) {
 						vp.mostrarMensaje("Los vehiculos tienen las mismas puertas", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==0) {
+					if (vehiculo.comparar(num, v1, v2) == 0) {
 						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene mas puertas", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==-1) {
-						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " tiene menos puertas", "INFORMACION");
+					if (vehiculo.comparar(num, v1, v2) == -1) {
+						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene menos puertas", "INFORMACION");
 					}
 				}
-				//CAPACIDAD
+				// CAPACIDAD
 				if (num == 4) {
 					for (int i = 0; i <= vehiculos.size() - 1; i++) {
 						if (v1.equals(vehiculos.get(i).getPlaca())) {
@@ -341,14 +343,14 @@ public class Controller implements ActionListener {
 					if (vehiculo.comparar(num, v1, v2) == 1) {
 						vp.mostrarMensaje("Los vehiculos tienen la misma capacidad", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==-1) {
+					if (vehiculo.comparar(num, v1, v2) == -1) {
 						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene mas capacidad", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==-0) {
-						vp.mostrarMensaje("El vehiculo con placa "+ v1 + " tiene menos capacidad", "INFORMACION");
+					if (vehiculo.comparar(num, v1, v2) == -0) {
+						vp.mostrarMensaje("El vehiculo con placa " + v1 + " tiene menos capacidad", "INFORMACION");
 					}
 				}
-				//TIPO
+				// TIPO
 				if (num == 5) {
 					for (int i = 0; i <= vehiculos.size() - 1; i++) {
 						if (v1.equals(vehiculos.get(i).getPlaca())) {
@@ -363,7 +365,7 @@ public class Controller implements ActionListener {
 					if (vehiculo.comparar(num, v1, v2) == 1) {
 						vp.mostrarMensaje("Los vehiculos son del mismo tipo", "INFORMACION");
 					}
-					if (vehiculo.comparar(num, v1, v2)==0) {
+					if (vehiculo.comparar(num, v1, v2) == 0) {
 						vp.mostrarMensaje("Los vehiculos son de diferente tipo", "INFORMACION");
 					}
 				}
@@ -387,15 +389,45 @@ public class Controller implements ActionListener {
 			vp.getPo().getMensajeLbl().setVisible(true);
 			vp.getPo().getPc().setVisible(false);
 
-		//}
-	
-		//if (vp.getPo().getPv().getRegresarBtn() == event.getSource()) {
-			
-	
-			
-			
-			
+		}
+
+		if (vp.getPo().getVenderBtn() == event.getSource()) {
+			vp.getPo().getVenderBtn().setVisible(false);
+			vp.getPo().getCapacRad().setVisible(false);
+			vp.getPo().getMarcaRad().setVisible(false);
+			vp.getPo().getModeloRad().setVisible(false);
+			vp.getPo().getPlacaRad().setVisible(false);
+			vp.getPo().getPuertaRad().setVisible(false);
+			vp.getPo().getTipoRad().setVisible(false);
+			vp.getPo().getMensajeLbl().setVisible(false);
+			vp.getPo().getPv().setVisible(true);
+		}
+
+		if (vp.getPo().getPv().getVenderBtn() == event.getSource()) {
+			String placa = vp.getPo().getPv().getPlacaTxt().getText();
+			System.out.println(placa);
+			if (vehiculo.buscarVehiculo(placa, vehiculos) != null) {
+				if (vehiculo.eliminarVehiculo(placa, vehiculos, file)) {
+					vp.mostrarMensaje("Se ha vendido el vehiculo", "INFORMACION");
+				} else {
+					vp.mostrarMensaje("No se ha eliminado el vehiculo", "INFORMACION");
+				}
+			} else {
+				vp.mostrarMensaje("El vehiculo con placa " + placa + " NO existe en el sistema", "ERROR");
+			}
+		}
+
+		if (vp.getPo().getPv().getRegresarBtn() == event.getSource()) {
+
+			vp.getPo().getVenderBtn().setVisible(true);
+			vp.getPo().getCapacRad().setVisible(true);
+			vp.getPo().getMarcaRad().setVisible(true);
+			vp.getPo().getModeloRad().setVisible(true);
+			vp.getPo().getPlacaRad().setVisible(true);
+			vp.getPo().getPuertaRad().setVisible(true);
+			vp.getPo().getTipoRad().setVisible(true);
+			vp.getPo().getMensajeLbl().setVisible(true);
+			vp.getPo().getPv().setVisible(false);
 		}
 	}
-
 }
