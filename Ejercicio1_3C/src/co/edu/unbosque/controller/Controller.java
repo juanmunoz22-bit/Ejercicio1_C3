@@ -49,7 +49,7 @@ public class Controller implements ActionListener {
 		vp.getPo().getCapacRad().addActionListener(listener);
 		vp.getPo().getPc().getCompararBtn().addActionListener(listener);
 		vp.getPo().getPc().getRegresarBtn().addActionListener(listener);
-
+	//	vp.getPo().getPv().getRegresarBtn().addActionListener(listener);
 	}
 
 	public void actionPerformed(ActionEvent event) {
@@ -387,8 +387,15 @@ public class Controller implements ActionListener {
 			vp.getPo().getMensajeLbl().setVisible(true);
 			vp.getPo().getPc().setVisible(false);
 
+		//}
+	
+		//if (vp.getPo().getPv().getRegresarBtn() == event.getSource()) {
+			
+	
+			
+			
+			
 		}
-
 	}
 
 }

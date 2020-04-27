@@ -16,6 +16,7 @@ import javax.swing.border.TitledBorder;
 	private static final long serialVersionUID = 791345044256043003L;
 
 	PanelComparar pc = new PanelComparar();
+	PanelVender pv = new PanelVender();
 	
 	private JRadioButton modeloRad,marcaRad,placaRad,capacRad,puertaRad,tipoRad;
 	private ButtonGroup buttonG;
@@ -160,8 +161,13 @@ import javax.swing.border.TitledBorder;
 		public void setMensajeLbl(JLabel mensajeLbl) {
 			this.mensajeLbl = mensajeLbl;
 		}
+		public PanelVender getPv() {
+			return pv;
+		}
+		public void setPv(PanelVender pv) {
+			this.pv = pv;
+		}
 		
-
 		
 	}
 
